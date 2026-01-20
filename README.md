@@ -9,7 +9,7 @@
   <a href="https://kaggle.com/thisulherath" target="_blank">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" target="_blank" />
   </a>
-  <a href="https://instagram.com/thisul herath" target="_blank">
+  <a href="https://www.instagram.com/_thisul_herath?igsh=MWlnMWw4amZ6NDRvMw%3D%3D" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank" />
   </a>
   <a href="mailto:thisulh@gmail.com">
