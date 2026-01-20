@@ -6,7 +6,7 @@
   <a href="https://www.linkedin.com/in/thisul/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" />
   </a>
-  <a href="https://kaggle.com/thisul herath" target="_blank">
+  <a href="https://kaggle.com/thisulherath" target="_blank">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" target="_blank" />
   </a>
   <a href="https://instagram.com/thisul herath" target="_blank">
