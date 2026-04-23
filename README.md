@@ -142,21 +142,27 @@ me = ThisulHerath()
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=thisulherath&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1" alt="GitHub Trophies"/>
+<img src="https://github-profile-trophy.vercel.app/?username=thisulherath&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&column=7" alt="GitHub Trophies"/>
 
 </div>
 
 ---
 
-## 🌐 Contribution Snake
+## 🌐 Contribution Activity
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/thisulherath/thisulherath/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=thisulherath&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true" alt="Contribution Graph"/>
 
 </div>
 
-> ⚙️ **Note:** To enable the snake animation, add this GitHub Action to your profile repo at `.github/workflows/snake.yml`:
+> ⚙️ **Optional Snake Animation:** Once you set up the GitHub Action below, replace the activity graph above with:
+> `![Snake](https://raw.githubusercontent.com/thisulherath/thisulherath/output/github-contribution-grid-snake-dark.svg)`
+>
+> <details>
+> <summary>Click to see the GitHub Action setup</summary>
+>
+> Create `.github/workflows/snake.yml` in your profile repo:
 > ```yaml
 > name: Generate Snake
 > on:
@@ -179,6 +185,7 @@ me = ThisulHerath()
 >         env:
 >           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 > ```
+> </details>
 
 ---
 
