@@ -154,40 +154,6 @@ me = ThisulHerath()
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=thisulherath&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true" alt="Contribution Graph"/>
 
-</div>
-
-> ⚙️ **Optional Snake Animation:** Once you set up the GitHub Action below, replace the activity graph above with:
-> `![Snake](https://raw.githubusercontent.com/thisulherath/thisulherath/output/github-contribution-grid-snake-dark.svg)`
->
-> <details>
-> <summary>Click to see the GitHub Action setup</summary>
->
-> Create `.github/workflows/snake.yml` in your profile repo:
-> ```yaml
-> name: Generate Snake
-> on:
->   schedule: [{cron: "0 0 * * *"}]
->   workflow_dispatch:
-> jobs:
->   generate:
->     runs-on: ubuntu-latest
->     steps:
->       - uses: Platane/snk@v3
->         with:
->           github_user_name: thisulherath
->           outputs: |
->             dist/github-contribution-grid-snake.svg
->             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
->       - uses: crazy-max/ghaction-github-pages@v3
->         with:
->           target_branch: output
->           build_dir: dist
->         env:
->           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-> ```
-> </details>
-
----
 
 ## 💡 AI Quote of Inspiration
 
