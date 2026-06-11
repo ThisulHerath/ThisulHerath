@@ -5,17 +5,25 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+# Explicitly grant write access to the repository contents
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Upgraded to v4 to fix Node.js deprecation warnings
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         with:
           github_user_name: thisulherath
           outputs: |
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3
+
+      # Upgraded to v4 to fix Node.js deprecation warnings
+      - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
