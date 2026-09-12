@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+  <title id="title">Thisul Herath — The Build Log</title>
+  <desc id="desc">An editorial banner in midnight blue and warm ivory with an orange path connecting data, models, and applications.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 H 0 V 32" fill="none" stroke="#263746" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="440" rx="16" fill="#101f2c"/>
+  <rect x="776" width="424" height="440" fill="url(#grid)"/>
+  <path d="M 776 0 V 440" stroke="#354552"/>
+  <rect x="48" y="40" width="36" height="36" rx="8" fill="#f18b55"/>
+  <text x="66" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#101f2c">th</text>
+  <text x="100" y="64" font-family="Consolas, monospace" font-size="14" letter-spacing="3" fill="#efebe2">THE BUILD LOG</text>
+  <text x="48" y="171" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-3" fill="#f5f0e6">Thisul Herath.</text>
+  <text x="51" y="224" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#d2d9da">From data to decisions.</text>
+  <text x="51" y="261" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#d2d9da">From ideas to interfaces.</text>
+  <path d="M 50 310 H 720" stroke="#354552"/>
+  <text x="51" y="346" font-family="Consolas, monospace" font-size="15" fill="#f18b55">AI / ML</text>
+  <text x="179" y="346" font-family="Consolas, monospace" font-size="15" fill="#d2d9da">FULL STACK</text>
+  <text x="354" y="346" font-family="Consolas, monospace" font-size="15" fill="#d2d9da">MOBILE</text>
+  <text x="51" y="398" font-family="Consolas, monospace" font-size="12" letter-spacing="2" fill="#a6b6bc">BASED IN SRI LANKA / BUILDING WITH CURIOSITY</text>
+  <text x="812" y="63" font-family="Consolas, monospace" font-size="12" letter-spacing="2" fill="#a6b6bc">IDEA → EXPERIMENT → BUILD</text>
+  <path d="M 855 131 H 1059 Q 1091 131 1091 163 V 205 Q 1091 237 1059 237 H 887 Q 855 237 855 269 V 310 Q 855 342 887 342 H 1091" fill="none" stroke="#f18b55" stroke-width="3"/>
+  <g fill="#101f2c" stroke="#f18b55" stroke-width="3">
+    <circle cx="855" cy="131" r="10"/>
+    <circle cx="975" cy="237" r="10"/>
+    <circle cx="1091" cy="342" r="10"/>
+  </g>
+  <g font-family="Consolas, monospace" font-size="15" fill="#f5f0e6">
+    <text x="843" y="108">01 / DATA</text>
+    <text x="927" y="213">02 / MODEL</text>
+    <text x="950" y="380">03 / APPLICATION</text>
+  </g>
+  <rect x="48" y="437" width="112" height="3" fill="#f18b55"/>
+</svg>

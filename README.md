@@ -1,198 +1,83 @@
-<div align="center">
+<p align="center">
+  <img src="./assets/build-log.svg" width="100%" alt="Thisul Herath — The Build Log. From data to decisions. From ideas to interfaces." />
+</p>
 
-<!-- Animated Header -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=28&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B%2C+I'm+Thisul+Herath;AI+%26+Machine+Learning+Engineer;Full+Stack+%26+Mobile+Developer;Turning+Data+into+Intelligence+%F0%9F%A7%A0" alt="Typing SVG" />
+<p align="center">
+  <a href="https://www.linkedin.com/in/thisul/">LinkedIn</a> &nbsp; / &nbsp;
+  <a href="https://kaggle.com/thisulherath">Kaggle</a> &nbsp; / &nbsp;
+  <a href="https://github.com/ThisulHerath/Portfolio">Portfolio source</a> &nbsp; / &nbsp;
+  <a href="mailto:thisulh@gmail.com">Email me</a>
+</p>
 
-<!-- Neural Network Animation -->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="600" alt="AI Animation"/>
+# Hi, I'm Thisul.
 
-<!-- Social Badges -->
-<a href="https://www.linkedin.com/in/thisul/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-<a href="https://kaggle.com/thisulherath" target="_blank">
-  <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white"/>
-</a>
-<a href="https://www.instagram.com/_thisul_herath" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-</a>
-<a href="mailto:thisulh@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
+An IT undergraduate in **Sri Lanka**, working across **machine learning, full-stack development, and mobile apps**. I'm interested in what happens after the experiment: turning a model into an API, connecting it to an interface, and making something people can use.
 
-<br/>
+I started with Java, fell for Python, and kept following the ideas that needed both data and software.
 
-![Profile Views](https://komarev.com/ghpvc/?username=thisulherath&color=00d9ff&style=for-the-badge&label=PROFILE+VIEWS)
-
-</div>
+**Currently exploring:** advanced NLP, AI/ML projects, and React Native.<br />
+**Open to:** AI/ML collaborations and conversations about building useful software.
 
 ---
 
-<img align="right" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" width="380" alt="AI Robot"/>
+## 01 / A few things I've been building
 
-### 🚀 About Me
+### [Telco Customer Churn](https://github.com/ThisulHerath/Telco-Customer-Churn-ML)
 
-```python
-class ThisulHerath:
-    def __init__(self):
-        self.name        = "Thisul Herath"
-        self.role        = "AI & ML Engineer | Full Stack Developer"
-        self.location    = "Sri Lanka 🇱🇰"
-        self.education   = "IT Undergraduate"
-        self.languages   = ["Python", "Java", "JavaScript", "R", "SQL"]
+**From a customer dataset to a prediction service.** A machine learning pipeline covering data preparation, feature engineering, experiment tracking, and API serving, with a container build workflow.
 
-    def current_focus(self):
-        return {
-            "🔭 Working on"  : "Machine Learning & AI Projects",
-            "🌱 Learning"    : "React Native & Advanced NLP",
-            "🤝 Open to"     : "AI/ML Collaborations",
-            "⚡ Fun fact"    : "Started with Java → fell for Python → now speaks AI"
-        }
+`Python` · `MLflow` · `FastAPI` · `Docker` · `GitHub Actions`
 
-    def mission(self):
-        return "Turning raw data into intelligent solutions 🧠"
+### [UniVault](https://github.com/ThisulHerath/UNI-VAULT)
 
-me = ThisulHerath()
-```
+**A shared home for student knowledge.** A mobile platform for sharing study notes, reviewing resources, organizing collections, and forming study groups.
 
-<br clear="right"/>
+`React Native` · `Expo` · `TypeScript` · `Node.js` · `MongoDB`
+
+### [ShareBite LK](https://github.com/ThisulHerath/ShareBite-LK)
+
+**Connecting surplus food with people nearby.** A team project for Sri Lankan businesses to list surplus food and for individuals and community groups to discover and reserve it before collection deadlines.
+
+`React` · `Vite` · `Express` · `MongoDB` · `JWT`
+
+**[Explore the rest of my repositories →](https://github.com/ThisulHerath?tab=repositories)**
 
 ---
 
-### 🧠 AI & Machine Learning
+## 02 / My workbench
 
-<div align="center">
+**Data & intelligence**<br />
+Python, R, SQL · scikit-learn, TensorFlow, PyTorch · Pandas, NumPy, Jupyter
 
-<img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="80" alt="TensorFlow"/>
-<img src="https://user-images.githubusercontent.com/74038190/212281775-b468df30-4edc-4bf8-a4ee-f52e1aaddc86.gif" width="80" alt="PyTorch"/>
-<img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="80" alt="Python"/>
-<img src="https://user-images.githubusercontent.com/74038190/212281763-e6ecd7ef-c4aa-45b6-a97c-f33f6bb592bd.gif" width="80" alt="Scikit"/>
+**Interfaces & applications**<br />
+JavaScript, TypeScript, Java · React, React Native, Node.js, Express, Spring Boot
 
-<br/><br/>
+**Storage & delivery**<br />
+MongoDB, PostgreSQL, MySQL, Supabase · Git, Docker, GitHub Actions, Postman, Ubuntu
 
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=Keras&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white)
-![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)
+<details>
+  <summary>More tools from my original toolkit</summary>
 
-</div>
+  C++, HTML, CSS, Keras, OpenCV, and Matplotlib.
+
+</details>
 
 ---
 
-### 🛠️ Tech Stack
+## 03 / The thread connecting the work
 
-<div align="center">
+Customer churn, student resources, surplus food: different problems, but the same pull toward making information useful.
 
-**Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-**Frameworks & Libraries**
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-
-**Databases & Tools**
-
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-
-</div>
+My next chapter is about bringing those interests closer together: **NLP, intelligent applications, and the interfaces that make them approachable.**
 
 ---
 
-### 📊 GitHub Stats
+## 04 / Start a conversation
 
-<div align="center">
+Have an AI/ML idea, a dataset worth exploring, or a project we could build together? Tell me what you're working on.
 
-<img src="https://github-readme-stats.vercel.app/api?username=thisulherath&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF" height="165" alt="GitHub Stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=thisulherath&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF" height="165" alt="Top Languages"/>
+**[thisulh@gmail.com](mailto:thisulh@gmail.com)** · [LinkedIn](https://www.linkedin.com/in/thisul/) · [Instagram](https://www.instagram.com/_thisul_herath)
 
-<br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=thisulherath&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=FF6B6B&currStreakLabel=00D9FF" alt="GitHub Streak"/>
-
-</div>
-
----
-
-### 🏆 GitHub Trophies
-
-<div align="center">
-
-<a href="https://github.com/ryo-ma/github-profile-trophy">
-  <img src="https://github-profile-trophy.vercel.app/?username=thisulherath&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&column=7&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C" alt="GitHub Trophies"/>
-</a>
-
-</div>
-
----
-
-### 🌐 Contribution Activity
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=thisulherath&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true" alt="Contribution Graph"/>
-
-</div>
-
----
-
-### 🎨 AI Art Gallery
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/74038190/212284136-03988978-df4f-4e25-9f12-d75c7c39cb12.gif" width="200" alt="AI Brain"/>
-<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-8fb0-4e9b-a5e2-0f9b2e9b6e6b.gif" width="200" alt="AI Chip"/>
-<img src="https://user-images.githubusercontent.com/74038190/212284136-03988978-df4f-4e25-9f12-d75c7c39cb12.gif" width="200" alt="AI Brain"/>
-
-</div>
-
----
-
-### 💡 Quote of Inspiration
-
-<div align="center">
-
-> *"Artificial Intelligence is the new electricity — it's transforming every industry it touches."*
-> — **Andrew Ng**
-
-<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400" alt="AI Animation"/>
-
-</div>
-
----
-
-<div align="center">
-
-### 🤝 Let's Build Something Intelligent Together!
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=16&pause=1000&color=00D9FF&center=true&vCenter=true&width=500&lines=Open+to+AI%2FML+collaborations;Always+learning%2C+always+building;Data+%2B+Code+%3D+Intelligence+%F0%9F%A7%A0" alt="Footer Typing"/>
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/mayhemantt/mayhemantt/Update/svg/Bottom.svg" alt="Bottom Wave"/>
-
-</div>
+<p align="center">
+  <sub>THISUL HERATH &nbsp; / &nbsp; SRI LANKA &nbsp; / &nbsp; THE BUILD LOG CONTINUES</sub>
+</p>
