@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200" viewBox="0 0 240 200" role="img" aria-labelledby="title">
+<title id="title">Floating prediction chart</title>
+<style>
+.float{animation:float 6s ease-in-out infinite}.late{animation-delay:-3s}.pulse{animation:pulse 4s ease-in-out infinite}.flow{stroke-dasharray:6 10;animation:flow 12s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes flow{to{stroke-dashoffset:-160}}
+@media(prefers-reduced-motion:reduce){.float,.pulse,.flow{animation:none}}
+</style>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="float"><rect x="40" y="39" width="160" height="120" rx="17" fill="#101f2c" stroke="#526875"/>
+<path d="M61 65 H115 M61 77 H92" stroke="#849da8" stroke-width="3"/>
+<path d="M62 136 H178 M62 94 V136" stroke="#526875"/>
+<path d="M67 124 L94 110 L119 117 L144 91 L174 81" stroke="#f18b55" stroke-width="4"/>
+<circle cx="174" cy="81" r="9" stroke="#80c9bc" class="pulse"/><circle cx="174" cy="81" r="3" fill="#f5f0e6"/></g>
+<path d="M26 118 V130 M20 124 H32 M213 56 V66 M208 61 H218" stroke="#80c9bc" stroke-width="2" class="pulse"/></g>
+</svg>

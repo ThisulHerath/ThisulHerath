@@ -11,6 +11,8 @@
 
 # Hi, I'm Thisul.
 
+<img align="right" src="./assets/floating-lab.svg" width="180" alt="Floating code windows and connected AI nodes" />
+
 An IT undergraduate in **Sri Lanka**, working across **machine learning, full-stack development, and mobile apps**. I'm interested in what happens after the experiment: turning a model into an API, connecting it to an interface, and making something people can use.
 
 I started with Java, fell for Python, and kept following the ideas that needed both data and software.
@@ -18,9 +20,13 @@ I started with Java, fell for Python, and kept following the ideas that needed b
 **Currently exploring:** advanced NLP, AI/ML projects, and React Native.<br />
 **Open to:** AI/ML collaborations and conversations about building useful software.
 
+<br clear="all" />
+
 ---
 
 ## 01 / A few things I've been building
+
+<img align="right" src="./assets/project-churn.svg" width="110" alt="Floating prediction chart" />
 
 ### [Telco Customer Churn](https://github.com/ThisulHerath/Telco-Customer-Churn-ML)
 
@@ -28,11 +34,19 @@ I started with Java, fell for Python, and kept following the ideas that needed b
 
 `Python` · `MLflow` · `FastAPI` · `Docker` · `GitHub Actions`
 
+<br clear="all" />
+
+<img align="right" src="./assets/project-vault.svg" width="110" alt="Floating study notes and bookmarks" />
+
 ### [UniVault](https://github.com/ThisulHerath/UNI-VAULT)
 
 **A shared home for student knowledge.** A mobile platform for sharing study notes, reviewing resources, organizing collections, and forming study groups.
 
 `React Native` · `Expo` · `TypeScript` · `Node.js` · `MongoDB`
+
+<br clear="all" />
+
+<img align="right" src="./assets/project-sharebite.svg" width="110" alt="Floating food bowl and leaf" />
 
 ### [ShareBite LK](https://github.com/ThisulHerath/ShareBite-LK)
 
@@ -40,11 +54,17 @@ I started with Java, fell for Python, and kept following the ideas that needed b
 
 `React` · `Vite` · `Express` · `MongoDB` · `JWT`
 
+<br clear="all" />
+
 **[Explore the rest of my repositories →](https://github.com/ThisulHerath?tab=repositories)**
+
+<br clear="all" />
 
 ---
 
 ## 02 / My workbench
+
+<img align="right" src="./assets/workbench-orbit.svg" width="160" alt="Floating tools orbiting a central code symbol" />
 
 **Data & intelligence**<br />
 Python, R, SQL · scikit-learn, TensorFlow, PyTorch · Pandas, NumPy, Jupyter
@@ -62,13 +82,21 @@ MongoDB, PostgreSQL, MySQL, Supabase · Git, Docker, GitHub Actions, Postman, Ub
 
 </details>
 
+<br clear="all" />
+
 ---
 
 ## 03 / The thread connecting the work
 
+<p align="center">
+  <img src="./assets/connecting-thread.svg" width="100%" alt="An animated thread connecting data, ideas, and useful applications" />
+</p>
+
 Customer churn, student resources, surplus food: different problems, but the same pull toward making information useful.
 
 My next chapter is about bringing those interests closer together: **NLP, intelligent applications, and the interfaces that make them approachable.**
+
+<br clear="all" />
 
 ---
 

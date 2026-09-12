@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200" viewBox="0 0 240 200" role="img" aria-labelledby="title">
+<title id="title">Floating study notes and bookmarks</title>
+<style>
+.float{animation:float 6s ease-in-out infinite}.late{animation-delay:-3s}.pulse{animation:pulse 4s ease-in-out infinite}.flow{stroke-dasharray:6 10;animation:flow 12s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes flow{to{stroke-dashoffset:-160}}
+@media(prefers-reduced-motion:reduce){.float,.pulse,.flow{animation:none}}
+</style>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="float late"><rect x="68" y="31" width="116" height="130" rx="13" fill="#172e3b" stroke="#80c9bc"/></g>
+<g class="float"><rect x="46" y="49" width="116" height="126" rx="13" fill="#101f2c" stroke="#526875"/>
+<path d="M120 49 V87 L131 79 L142 87 V49" fill="#f18b55" stroke="#f18b55"/>
+<path d="M65 100 H138 M65 114 H128 M65 128 H138 M65 142 H103" stroke="#849da8" stroke-width="3"/></g>
+<path d="M202 96 V110 M195 103 H209 M27 53 V63 M22 58 H32" stroke="#80c9bc" stroke-width="2" class="pulse"/></g>
+</svg>

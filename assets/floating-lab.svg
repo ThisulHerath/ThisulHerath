@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200" viewBox="0 0 240 200" role="img" aria-labelledby="title">
+<title id="title">Floating code windows and connected AI nodes</title>
+<style>
+.float{animation:float 6s ease-in-out infinite}.late{animation-delay:-3s}.pulse{animation:pulse 4s ease-in-out infinite}.flow{stroke-dasharray:6 10;animation:flow 12s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes flow{to{stroke-dashoffset:-160}}
+@media(prefers-reduced-motion:reduce){.float,.pulse,.flow{animation:none}}
+</style>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="120" cy="179" rx="83" ry="8" fill="#849da8" opacity=".12"/>
+<path d="M35 132 Q120 182 207 84" stroke="#849da8" stroke-width="1.5" class="flow"/>
+<g class="float"><rect x="27" y="41" width="150" height="101" rx="13" fill="#101f2c" stroke="#526875"/>
+<path d="M28 65 H176" stroke="#526875"/><circle cx="42" cy="53" r="3" fill="#f18b55"/><circle cx="53" cy="53" r="3" fill="#80c9bc"/>
+<path d="M65 83 L52 96 L65 109 M132 83 L145 96 L132 109 M108 79 L93 115" stroke="#f18b55" stroke-width="4"/>
+</g><g class="float late"><rect x="146" y="98" width="70" height="61" rx="12" fill="#172e3b" stroke="#80c9bc"/>
+<path d="M161 118 L181 109 L201 125 L181 144 Z M161 118 L181 144 M181 109 V144" stroke="#80c9bc" stroke-width="1.5"/>
+<g fill="#f5f0e6"><circle cx="161" cy="118" r="3"/><circle cx="181" cy="109" r="3"/><circle cx="201" cy="125" r="3"/><circle cx="181" cy="144" r="3"/></g></g>
+<path d="M199 40 V52 M193 46 H205 M16 89 V97 M12 93 H20" stroke="#f18b55" stroke-width="2" class="pulse"/></g>
+</svg>
