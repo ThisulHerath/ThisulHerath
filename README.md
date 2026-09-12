@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/thisul/">LinkedIn</a> &nbsp; / &nbsp;
-  <a href="https://kaggle.com/thisulherath">Kaggle</a> &nbsp; / &nbsp;
-  <a href="https://github.com/ThisulHerath/Portfolio">Portfolio source</a> &nbsp; / &nbsp;
-  <a href="mailto:thisulh@gmail.com">Email me</a>
+  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/link-portfolio.svg" width="150" alt="Visit my portfolio" /></a>
+  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/link-linkedin.svg" width="150" alt="Connect on LinkedIn" /></a>
+  <a href="https://kaggle.com/thisulherath"><img src="./assets/link-kaggle.svg" width="150" alt="Explore my Kaggle profile" /></a>
+  <a href="mailto:thisulh@gmail.com"><img src="./assets/link-email.svg" width="150" alt="Email Thisul" /></a>
 </p>
 
 # Hi, I'm Thisul.
@@ -22,7 +22,7 @@ I started with Java, fell for Python, and kept following the ideas that needed b
 
 <br clear="all" />
 
----
+<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
 
 ## 01 / A few things I've been building
 
@@ -56,11 +56,11 @@ I started with Java, fell for Python, and kept following the ideas that needed b
 
 <br clear="all" />
 
-**[Explore the rest of my repositories →](https://github.com/ThisulHerath?tab=repositories)**
+<a href="https://github.com/ThisulHerath?tab=repositories"><img src="./assets/link-repositories.svg" width="170" alt="Explore all my repositories" /></a>
 
 <br clear="all" />
 
----
+<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
 
 ## 02 / My workbench
 
@@ -84,7 +84,7 @@ MongoDB, PostgreSQL, MySQL, Supabase · Git, Docker, GitHub Actions, Postman, Ub
 
 <br clear="all" />
 
----
+<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
 
 ## 03 / The thread connecting the work
 
@@ -98,13 +98,19 @@ My next chapter is about bringing those interests closer together: **NLP, intell
 
 <br clear="all" />
 
----
+<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
 
 ## 04 / Start a conversation
 
 Have an AI/ML idea, a dataset worth exploring, or a project we could build together? Tell me what you're working on.
 
-**[thisulh@gmail.com](mailto:thisulh@gmail.com)** · [LinkedIn](https://www.linkedin.com/in/thisul/) · [Instagram](https://www.instagram.com/_thisul_herath)
+<p>
+  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/link-portfolio.svg" width="150" alt="Visit my portfolio" /></a>
+  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/link-linkedin.svg" width="150" alt="Connect on LinkedIn" /></a>
+  <a href="https://www.instagram.com/_thisul_herath"><img src="./assets/link-instagram.svg" width="150" alt="Find me on Instagram" /></a>
+</p>
+
+**[thisulh@gmail.com](mailto:thisulh@gmail.com)** · **[Visit my portfolio](https://portfolio-lemon-two-47.vercel.app/)**
 
 <p align="center">
   <sub>THISUL HERATH &nbsp; / &nbsp; SRI LANKA &nbsp; / &nbsp; THE BUILD LOG CONTINUES</sub>

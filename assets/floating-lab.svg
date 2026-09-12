@@ -7,6 +7,12 @@
 @keyframes flow{to{stroke-dashoffset:-160}}
 @media(prefers-reduced-motion:reduce){.float,.pulse,.flow{animation:none}}
 </style>
+<defs>
+  <pattern id="backdrop-dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="#849da8" opacity=".28"/></pattern>
+  <radialGradient id="backdrop-glow"><stop stop-color="#80c9bc" stop-opacity=".13"/><stop offset="1" stop-color="#80c9bc" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="5" y="5" width="230" height="190" rx="24" fill="url(#backdrop-glow)"/>
+<rect x="5" y="5" width="230" height="190" rx="24" fill="url(#backdrop-dots)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
 <ellipse cx="120" cy="179" rx="83" ry="8" fill="#849da8" opacity=".12"/>
 <path d="M35 132 Q120 182 207 84" stroke="#849da8" stroke-width="1.5" class="flow"/>

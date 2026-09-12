@@ -7,6 +7,16 @@
     </pattern>
   </defs>
   <rect width="1200" height="440" rx="16" fill="#101f2c"/>
+  <defs>
+    <radialGradient id="ambient"><stop stop-color="#80c9bc" stop-opacity=".14"/><stop offset="1" stop-color="#80c9bc" stop-opacity="0"/></radialGradient>
+    <pattern id="ambient-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="1" fill="#849da8" opacity=".12"/></pattern>
+  </defs>
+  <rect width="1200" height="440" rx="16" fill="url(#ambient-dots)"/>
+  <ellipse cx="690" cy="180" rx="220" ry="210" fill="url(#ambient)"/>
+  <g fill="none" stroke="#80c9bc" opacity=".12">
+    <circle cx="680" cy="190" r="105"/><circle cx="680" cy="190" r="140"/>
+    <path d="M575 190 H540 L520 210 H470 M680 50 V20 M680 330 V420"/>
+  </g>
   <rect x="776" width="424" height="440" fill="url(#grid)"/>
   <path d="M 776 0 V 440" stroke="#354552"/>
   <rect x="48" y="40" width="36" height="36" rx="8" fill="#f18b55"/>

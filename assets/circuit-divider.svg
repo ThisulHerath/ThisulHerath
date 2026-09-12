@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="36" viewBox="0 0 800 36" role="img" aria-label="Decorative circuit background">
+<defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="1" fill="#849da8" opacity=".22"/></pattern></defs>
+<style>.pulse{animation:pulse 6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.9}}@media(prefers-reduced-motion:reduce){.pulse{animation:none}}</style>
+<rect width="800" height="36" rx="10" fill="url(#dots)"/>
+<g fill="none" stroke="#849da8" opacity=".4"><path d="M0 18 H230 L242 6 H324 M476 30 H558 L570 18 H800"/><path d="M276 18 H524" stroke-dasharray="2 7"/></g>
+<g fill="#f18b55" class="pulse"><circle cx="242" cy="6" r="3"/><circle cx="400" cy="18" r="3"/><circle cx="558" cy="30" r="3"/></g>
+</svg>

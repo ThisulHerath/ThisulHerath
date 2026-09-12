@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="46" viewBox="0 0 170 46" role="img" aria-labelledby="title">
+<title id="title">Email me</title>
+<style>.signal{animation:signal 5s ease-in-out infinite}@keyframes signal{0%,100%{opacity:.45}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.signal{animation:none}}</style>
+<rect x="1" y="1" width="168" height="44" rx="11" fill="#101f2c" stroke="#526875"/>
+<path d="M12 44 H60" stroke="#f18b55" opacity=".6"/>
+<g fill="none" stroke="#80c9bc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="15" width="20" height="16" rx="3"/><path d="M15 17 L24 24 L33 17"/></g>
+<text x="44" y="28" fill="#f5f0e6" font-family="Arial, Helvetica, sans-serif" font-size="14">Email me</text>
+<path class="signal" d="M147 27 L155 19 M149 19 H155 V25" fill="none" stroke="#f18b55" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
