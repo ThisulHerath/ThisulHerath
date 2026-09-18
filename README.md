@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="./assets/build-log.svg" width="100%" alt="Thisul Herath — The Build Log. From data to decisions. From ideas to interfaces." />
+</p>
 
 <p align="center">
   <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/link-portfolio.svg" width="150" alt="Visit my portfolio" /></a>
