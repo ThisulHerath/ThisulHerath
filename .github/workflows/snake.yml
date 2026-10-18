@@ -1,28 +1,32 @@
-name: Generate Snake
+﻿name: Generate contribution orbit
 
 on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/snake.yml
 
-# Explicitly grant write access to the repository contents
 permissions:
   contents: write
+
+concurrency:
+  group: contribution-orbit
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Upgraded to v4 to fix Node.js deprecation warnings
       - uses: actions/checkout@v4
-
       - uses: Platane/snk@v3
         with:
-          github_user_name: thisulherath
+          github_user_name: ThisulHerath
           outputs: |
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-
-      # Upgraded to v4 to fix Node.js deprecation warnings
+            dist/github-contribution-grid-snake.svg?color_snake=%230d7764&color_dots=%23edf3ef,%23c3e8d1,%238bd2af,%235eb596,%232a8b73
+            dist/github-contribution-grid-snake-dark.svg?color_snake=%23d6f77b&color_dots=%230e1a27,%23203e3d,%232c6c5c,%2347a88a,%236ce5c0
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output

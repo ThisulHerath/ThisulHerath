@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="256" viewBox="0 0 1200 256" role="img" aria-labelledby="title desc"><title id="title">TELCO CUSTOMER CHURN</title><desc id="desc">From customer data to a prediction service. Data preparation · Feature engineering · Experiment tracking. Python / MLflow / FastAPI / Docker / GitHub Actions. Open the linked project repository for source and documentation.</desc><defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#203347" stroke-opacity=".32"/></pattern>
+      <radialGradient id="halo"><stop stop-color="#6ce5c0" stop-opacity=".16"/><stop offset="1" stop-color="#6ce5c0" stop-opacity="0"/></radialGradient>
+      <linearGradient id="beam"><stop stop-color="#6ce5c0"/><stop offset="1" stop-color="#d6f77b"/></linearGradient>
+    </defs>
+    <style>
+      .orbit{transform-origin:940px 242px;animation:orbit 48s linear infinite}
+      .pulse{animation:pulse 4s ease-in-out infinite}
+      .drift{animation:drift 6s ease-in-out infinite}
+      @keyframes orbit{to{transform:rotate(360deg)}}
+      @keyframes pulse{50%{opacity:.4}}
+      @keyframes drift{50%{transform:translateY(-7px)}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift{animation:none}}
+    </style><rect x="1" y="1" width="1198" height="254" rx="18" fill="#080f19" stroke="#26394a"/><text x="32" y="36" fill="#6ce5c0" font-family="'Courier New',monospace" font-size="12" font-weight="400" letter-spacing="2">MISSION 01 / FIELD WORK</text><text x="884" y="36" fill="#d6f77b" font-family="'Courier New',monospace" font-size="12" font-weight="400" letter-spacing="0">EXPLORE REPOSITORY ↗</text><path d="M32 54H1168" stroke="#26394a" /><text x="32" y="105" fill="#edf5f2" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" letter-spacing="-0.5">TELCO CUSTOMER CHURN</text><text x="34" y="143" fill="#d6f77b" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" letter-spacing="0">From customer data to a prediction service.</text><text x="34" y="181" fill="#9cb1bf" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" letter-spacing="0">Data preparation · Feature engineering · Experiment tracking</text><text x="34" y="226" fill="#edf5f2" font-family="'Courier New',monospace" font-size="13" font-weight="400" letter-spacing="0">Python / MLflow / FastAPI / Docker / GitHub Actions</text><circle cx="1068" cy="149" r="65" fill="url(#halo)" stroke="#29443f"/><g fill="none" stroke="#6ce5c0" stroke-width="3"><path d="M1028 180V115M1028 180H1107"/><path d="M1038 164L1055 146L1075 155L1098 124" stroke="#d6f77b"/><circle cx="1098" cy="124" r="5" fill="#d6f77b"/></g></svg>

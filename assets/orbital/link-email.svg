@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="68" viewBox="0 0 216 68" role="img" aria-labelledby="title desc"><title id="title">EMAIL</title><desc id="desc">SAY HELLO ↗</desc><defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#203347" stroke-opacity=".32"/></pattern>
+      <radialGradient id="halo"><stop stop-color="#6ce5c0" stop-opacity=".16"/><stop offset="1" stop-color="#6ce5c0" stop-opacity="0"/></radialGradient>
+      <linearGradient id="beam"><stop stop-color="#6ce5c0"/><stop offset="1" stop-color="#d6f77b"/></linearGradient>
+    </defs>
+    <style>
+      .orbit{transform-origin:940px 242px;animation:orbit 48s linear infinite}
+      .pulse{animation:pulse 4s ease-in-out infinite}
+      .drift{animation:drift 6s ease-in-out infinite}
+      @keyframes orbit{to{transform:rotate(360deg)}}
+      @keyframes pulse{50%{opacity:.4}}
+      @keyframes drift{50%{transform:translateY(-7px)}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift{animation:none}}
+    </style><rect x="1" y="1" width="214" height="66" rx="18" fill="#080f19" stroke="#26394a"/><text x="16" y="28" fill="#edf5f2" font-family="'Courier New',monospace" font-size="14" font-weight="700" letter-spacing="1">EMAIL</text><text x="16" y="51" fill="#6ce5c0" font-family="'Courier New',monospace" font-size="10" font-weight="400" letter-spacing="1">SAY HELLO ↗</text></svg>

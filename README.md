@@ -1,117 +1,60 @@
-<p align="center">
-  <img src="./assets/build-log.svg" width="100%" alt="Thisul Herath — The Build Log. From data to decisions. From ideas to interfaces." />
+﻿<p align="center">
+  <img src="./assets/orbital/00-arrival.svg" width="100%" alt="Thisul Herath — Orbital Research Station. Curiosity is the launch sequence. AI/ML, full-stack and mobile development. Sri Lanka, UTC+05:30." />
 </p>
 
 <p align="center">
-  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/link-portfolio.svg" width="150" alt="Visit my portfolio" /></a>
-  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/link-linkedin.svg" width="150" alt="Connect on LinkedIn" /></a>
-  <a href="https://kaggle.com/thisulherath"><img src="./assets/link-kaggle.svg" width="150" alt="Explore my Kaggle profile" /></a>
-  <a href="mailto:thisulh@gmail.com"><img src="./assets/link-email.svg" width="150" alt="Email Thisul" /></a>
+  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/orbital/link-portfolio.svg" width="180" alt="Visit my portfolio" /></a>
+  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/orbital/link-linkedin.svg" width="180" alt="Connect on LinkedIn" /></a>
+  <a href="https://kaggle.com/thisulherath"><img src="./assets/orbital/link-kaggle.svg" width="180" alt="Explore my Kaggle profile" /></a>
+  <a href="mailto:thisulh@gmail.com"><img src="./assets/orbital/link-email.svg" width="180" alt="Email Thisul" /></a>
 </p>
 
-# Hi, I'm Thisul.
+<img src="./assets/orbital/01-flight-deck.svg" width="100%" alt="Flight deck: I'm an IT undergraduate in Sri Lanka working across machine learning, full-stack development, and mobile apps. Currently exploring advanced NLP, AI/ML projects, and React Native. Open to AI/ML collaborations." />
 
-<img align="right" src="./assets/floating-lab.svg" width="180" alt="Floating code windows and connected AI nodes" />
+I started with **Java**, fell for **Python**, and kept following the ideas that needed both data and software. I'm interested in what happens after the experiment: turning a model into an API, connecting it to an interface, and making something people can use.
 
-An IT undergraduate in **Sri Lanka**, working across **machine learning, full-stack development, and mobile apps**. I'm interested in what happens after the experiment: turning a model into an API, connecting it to an interface, and making something people can use.
+<br />
 
-I started with Java, fell for Python, and kept following the ideas that needed both data and software.
+<img src="./assets/orbital/02-missions.svg" width="100%" alt="Mission archive — selected projects. Three problems. One instinct: make information useful." />
 
-**Currently exploring:** advanced NLP, AI/ML projects, and React Native.<br />
-**Open to:** AI/ML collaborations and conversations about building useful software.
+<a href="https://github.com/ThisulHerath/Telco-Customer-Churn-ML"><img src="./assets/orbital/02a-churn.svg" width="100%" alt="Explore Telco Customer Churn: a machine learning pipeline with data preparation, feature engineering, experiment tracking, API serving and a container build workflow. Python, MLflow, FastAPI, Docker and GitHub Actions." /></a>
 
-<br clear="all" />
+<a href="https://github.com/ThisulHerath/UNI-VAULT"><img src="./assets/orbital/02b-univault.svg" width="100%" alt="Explore UniVault: a mobile platform for sharing study notes, reviewing resources, organizing collections and forming study groups. React Native, Expo, TypeScript, Node.js and MongoDB." /></a>
 
-<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
+<a href="https://github.com/ThisulHerath/ShareBite-LK"><img src="./assets/orbital/02c-sharebite.svg" width="100%" alt="Explore ShareBite LK: a team project connecting surplus food from Sri Lankan businesses with people and community groups nearby. React, Vite, Express, MongoDB and JWT." /></a>
 
-## 01 / A few things I've been building
+<p align="right"><a href="https://github.com/ThisulHerath?tab=repositories">Explore all repositories →</a></p>
 
-<img align="right" src="./assets/project-churn.svg" width="110" alt="Floating prediction chart" />
+<br />
 
-### [Telco Customer Churn](https://github.com/ThisulHerath/Telco-Customer-Churn-ML)
+<img src="./assets/orbital/03-equipment.svg" width="100%" alt="Equipment bay. Data: Python, R, SQL, scikit-learn, TensorFlow, PyTorch, Pandas, NumPy and Jupyter. Apps: JavaScript, TypeScript, Java, React, React Native, Node.js, Express and Spring Boot. Delivery: MongoDB, PostgreSQL, MySQL, Supabase, Docker, GitHub Actions, Git, Postman and Ubuntu. Also C++, HTML, CSS, Keras, OpenCV and Matplotlib." />
 
-**From a customer dataset to a prediction service.** A machine learning pipeline covering data preparation, feature engineering, experiment tracking, and API serving, with a container build workflow.
+<br />
 
-`Python` · `MLflow` · `FastAPI` · `Docker` · `GitHub Actions`
+<img src="./assets/orbital/04-flight-path.svg" width="100%" alt="Flight path: Java foundations, Python and ML experiments, web and mobile builds, and ongoing exploration of NLP. No final level, just better questions and more useful builds." />
 
-<br clear="all" />
+<br />
 
-<img align="right" src="./assets/project-vault.svg" width="110" alt="Floating study notes and bookmarks" />
-
-### [UniVault](https://github.com/ThisulHerath/UNI-VAULT)
-
-**A shared home for student knowledge.** A mobile platform for sharing study notes, reviewing resources, organizing collections, and forming study groups.
-
-`React Native` · `Expo` · `TypeScript` · `Node.js` · `MongoDB`
-
-<br clear="all" />
-
-<img align="right" src="./assets/project-sharebite.svg" width="110" alt="Floating food bowl and leaf" />
-
-### [ShareBite LK](https://github.com/ThisulHerath/ShareBite-LK)
-
-**Connecting surplus food with people nearby.** A team project for Sri Lankan businesses to list surplus food and for individuals and community groups to discover and reserve it before collection deadlines.
-
-`React` · `Vite` · `Express` · `MongoDB` · `JWT`
-
-<br clear="all" />
-
-<a href="https://github.com/ThisulHerath?tab=repositories"><img src="./assets/link-repositories.svg" width="170" alt="Explore all my repositories" /></a>
-
-<br clear="all" />
-
-<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
-
-## 02 / My workbench
-
-<img align="right" src="./assets/workbench-orbit.svg" width="160" alt="Floating tools orbiting a central code symbol" />
-
-**Data & intelligence**<br />
-Python, R, SQL · scikit-learn, TensorFlow, PyTorch · Pandas, NumPy, Jupyter
-
-**Interfaces & applications**<br />
-JavaScript, TypeScript, Java · React, React Native, Node.js, Express, Spring Boot
-
-**Storage & delivery**<br />
-MongoDB, PostgreSQL, MySQL, Supabase · Git, Docker, GitHub Actions, Postman, Ubuntu
+<img src="./assets/orbital/05-telemetry.svg" width="100%" alt="GitHub telemetry: public repositories, stars, followers and repositories by primary language. Updated daily by GitHub Actions; snapshot date shown in the graphic." />
 
 <details>
-  <summary>More tools from my original toolkit</summary>
-
-  C++, HTML, CSS, Keras, OpenCV, and Matplotlib.
-
+  <summary>Contribution orbit · watch the trail</summary>
+  <br />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ThisulHerath/ThisulHerath/output/github-contribution-grid-snake-dark.svg" />
+    <img src="https://raw.githubusercontent.com/ThisulHerath/ThisulHerath/output/github-contribution-grid-snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution calendar, regenerated daily." />
+  </picture>
 </details>
 
-<br clear="all" />
+<br />
 
-<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
-
-## 03 / The thread connecting the work
+<img src="./assets/orbital/06-contact.svg" width="100%" alt="Open a channel. Have a curious problem? Let's build something useful. AI/ML ideas, interesting datasets and thoughtful software. Collaboration welcome." />
 
 <p align="center">
-  <img src="./assets/connecting-thread.svg" width="100%" alt="An animated thread connecting data, ideas, and useful applications" />
+  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/orbital/link-linkedin.svg" width="180" alt="Connect on LinkedIn" /></a>
+  <a href="mailto:thisulh@gmail.com"><img src="./assets/orbital/link-email.svg" width="180" alt="Email thisulh@gmail.com" /></a>
+  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/orbital/link-portfolio.svg" width="180" alt="Visit my portfolio" /></a>
+  <a href="https://www.instagram.com/_thisul_herath"><img src="./assets/orbital/link-instagram.svg" width="180" alt="Find me on Instagram" /></a>
 </p>
 
-Customer churn, student resources, surplus food: different problems, but the same pull toward making information useful.
-
-My next chapter is about bringing those interests closer together: **NLP, intelligent applications, and the interfaces that make them approachable.**
-
-<br clear="all" />
-
-<p align="center"><img src="./assets/circuit-divider.svg" width="100%" alt="" /></p>
-
-## 04 / Start a conversation
-
-Have an AI/ML idea, a dataset worth exploring, or a project we could build together? Tell me what you're working on.
-
-<p>
-  <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/link-portfolio.svg" width="150" alt="Visit my portfolio" /></a>
-  <a href="https://www.linkedin.com/in/thisul/"><img src="./assets/link-linkedin.svg" width="150" alt="Connect on LinkedIn" /></a>
-  <a href="https://www.instagram.com/_thisul_herath"><img src="./assets/link-instagram.svg" width="150" alt="Find me on Instagram" /></a>
-</p>
-
-**[thisulh@gmail.com](mailto:thisulh@gmail.com)** · **[Visit my portfolio](https://portfolio-lemon-two-47.vercel.app/)**
-
-<p align="center">
-  <sub>THISUL HERATH &nbsp; / &nbsp; SRI LANKA &nbsp; / &nbsp; THE BUILD LOG CONTINUES</sub>
-</p>
+<p align="center"><sub>Designed for curiosity. Built for the next orbit.</sub></p>
