@@ -9,9 +9,9 @@
   <a href="mailto:thisulh@gmail.com"><img src="./assets/orbital/link-email.svg" width="180" alt="Email Thisul" /></a>
 </p>
 
-<img src="./assets/orbital/01-flight-deck.svg" width="100%" alt="Flight deck: I'm an IT undergraduate in Sri Lanka working across machine learning, full-stack development, and mobile apps. Currently exploring advanced NLP, AI/ML projects, and React Native. Open to AI/ML collaborations." />
+<img src="./assets/orbital/01-flight-deck.svg" width="100%" alt="Flight deck: IT undergraduate in Sri Lanka. Machine learning, web and mobile. Exploring advanced NLP and React Native. My workflow: experiment → API → interface. Open to AI/ML collaboration." />
 
-I started with **Java**, fell for **Python**, and kept following the ideas that needed both data and software. I'm interested in what happens after the experiment: turning a model into an API, connecting it to an interface, and making something people can use.
+I started with **Java** and found my curiosity in **Python**. Now I connect the pieces: a dataset worth questioning, a model worth testing, and an interface that makes the result useful.
 
 <br />
 

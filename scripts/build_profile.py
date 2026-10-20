@@ -14,7 +14,7 @@ WHITE, MUTED, MINT, LIME = "#edf5f2", "#9cb1bf", "#6ce5c0", "#d6f77b"
 
 
 def text(x, y, value, size=16, color=WHITE, weight=400, mono=False, spacing=0):
-    font = "'Courier New',monospace" if mono else "Arial,Helvetica,sans-serif"
+    font = "Consolas,'Liberation Mono',monospace" if mono else "Arial,Helvetica,sans-serif"
     return f'<text x="{x}" y="{y}" fill="{color}" font-family="{font}" font-size="{size}" font-weight="{weight}" letter-spacing="{spacing}">{escape(value)}</text>'
 
 
@@ -66,7 +66,7 @@ def hero():
     b += text(54,454,"SRI LANKA  /  UTC+05:30  /  ALWAYS EXPLORING",11,MUTED,mono=True,spacing=1)
     b += '<g fill="none" stroke="#395a67"><circle cx="940" cy="242" r="177" stroke-dasharray="3 9"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(-35 940 242)"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(35 940 242)"/><circle cx="940" cy="242" r="110"/></g>'
     b += '<g class="orbit"><circle cx="940" cy="65" r="7" fill="#d6f77b"/><circle cx="940" cy="419" r="4" fill="#6ce5c0"/><path d="M940 51V38M926 65H913M954 65H967" stroke="#d6f77b"/></g>'
-    b += '<g class="drift">'+rect(876,178,128,128,PANEL,26,MINT)+text(897,257,"{ th }",32,LIME,700,mono=True)+'</g>'
+    b += '<g class="drift">'+rect(876,178,128,128,PANEL,26,MINT)+text(940,252,"{ th }",28,LIME,700,mono=True).replace('<text ', '<text text-anchor="middle" ')+'</g>'
     b += text(777,43,"DEEP SPACE / OPEN SOURCE",10,MUTED,mono=True,spacing=2)
     b += text(827,454,"IDEA → EXPERIMENT → BUILD",11,MINT,mono=True)
     save("00-arrival",480,"Thisul Herath — Orbital Research Station","An animated orbital emblem in mint and chartreuse. AI/ML, full-stack and mobile development. Based in Sri Lanka, UTC+05:30.",b)
@@ -74,19 +74,56 @@ def hero():
 
 def console():
     b = label("01","FLIGHT DECK","OPERATOR BRIEFING")
-    b += text(36,102,"A curious mind. A builder's instinct.",31,WHITE,700)
-    b += text(36,139,"IT undergraduate exploring the space between models and useful software.",17,MUTED)
-    b += line(36,170,1164,170)
-    rows = [("HOME BASE","Sri Lanka"),("TRAJECTORY","Machine learning · Full-stack · Mobile"),("CURRENT SIGNAL","Advanced NLP · AI/ML projects · React Native"),("COLLAB CHANNEL","AI/ML ideas & useful software")]
+    b += text(36,104,"I connect the model to the experience.",32,WHITE,700)
+    b += text(36,141,"IT undergraduate. Exploring AI, building across web and mobile.",18,MUTED)
+    b += rect(36,176,660,222)
+    b += rect(716,176,448,222,"#10231f",12,"#335147")
+    rows = [("BASED IN","Sri Lanka / UTC+05:30"),("BUILDING WITH","Machine learning · Web · Mobile"),("EXPLORING","Advanced NLP · React Native"),("OPEN TO","AI/ML collaboration & useful software")]
     for i,(k,v) in enumerate(rows):
-        y = 209 + i*42
-        b += text(36,y,k,12,MINT,mono=True,spacing=1)+text(235,y,v,17,WHITE)
-    b += rect(848,192,314,148,"#132320",12,"#335147")
-    b += text(868,221,"RESEARCH QUESTION",11,LIME,mono=True,spacing=1)
-    for i,t in enumerate(["What happens after", "the experiment?", "Make it useful. Ship it."]):
-        b += text(868,254+i*29,t,20,WHITE,700 if i==2 else 400)
-    b += line(36,379,1164,379) + text(36,411,"FIRST JAVA. THEN PYTHON. NOW FOLLOWING THE NEXT GOOD QUESTION.",12,MUTED,mono=True,spacing=1)
-    save("01-flight-deck",438,"Flight deck — About Thisul","IT undergraduate in Sri Lanka. Exploring advanced NLP, AI/ML and React Native. Open to collaboration.",b)
+        y = 215 + i*50
+        b += text(56,y,k,12,MINT,mono=True,spacing=1)+text(228,y,v,17,WHITE)
+        if i < 3: b += line(56,y+19,676,y+19)
+    b += text(740,209,"THE WAY I BUILD",12,LIME,mono=True,spacing=1)
+    b += text(740,243,"Beyond the notebook.",25,WHITE,700)
+    b += line(776,293,1100,293,"#426b5b",'stroke-width="2"')
+    for x,n,caption in [(740,"01","EXPERIMENT"),(882,"02","API"),(1024,"03","INTERFACE")]:
+        b += rect(x,273,88,40,"#152f28",8,"#426b5b")
+        b += text(x+33,300,n,18,LIME,700,mono=True)
+        b += text(x,338,caption,12,MINT,mono=True)
+    b += text(740,375,"A question becomes something you can use.",16,MUTED)
+    b += line(36,424,1164,424) + text(36,456,"JAVA ROOTS / PYTHON CURIOSITY / A BUILDER'S INSTINCT",12,MUTED,mono=True,spacing=1)
+    save("01-flight-deck",482,"Flight deck — About Thisul","IT undergraduate in Sri Lanka. Exploring advanced NLP and React Native. My workflow: experiment, API, interface. Open to AI/ML collaboration.",b)
+
+
+def project_preview(kind):
+    """Conceptual UI artwork, deliberately free of invented product metrics."""
+    b = rect(820,76,344,198,"#0b1520",12)
+    b += text(838,99,"INTERFACE STUDY",10,MUTED,mono=True,spacing=1)
+    for x in (1118,1130,1142):
+        b += f'<circle cx="{x}" cy="95" r="3" fill="{MINT if x==1118 else LINE}"/>'
+    b += line(820,111,1164,111)
+    if kind == "churn":
+        b += text(838,139,"Prediction pipeline",17,WHITE,700)
+        for i,(name,width) in enumerate([("PREPARE",112),("TRAIN",148),("SERVE",186)]):
+            y=166+i*36
+            b += text(838,y,name,10,MUTED,mono=True)
+            b += rect(916,y-10,220,10,PANEL,4,PANEL)
+            b += rect(916,y-10,width,10,MINT if i<2 else LIME,4,"none")
+    elif kind == "vault":
+        b += rect(838,126,50,130,"#152b2a",8,"#335147")
+        for y in (146,172,198): b += line(852,y,874,y,MINT,'stroke-width="3"')
+        b += text(904,142,"Your study space",18,WHITE,700)
+        for y,name,sub in [(158,"Study notes","COLLECT / ORGANIZE"),(210,"Study groups","SHARE / LEARN")]:
+            b += rect(904,y,240,43,PANEL,6)
+            b += text(916,y+18,name,13,WHITE)+text(916,y+33,sub,9,MINT,mono=True)
+    else:
+        b += text(838,139,"Find food. Share good.",18,WHITE,700)
+        for x,name,sub in [(838,"DISCOVER","Nearby food"),(996,"CONNECT","Community")]:
+            b += rect(x,155,148,99,PANEL,8)
+            b += f'<circle cx="{x+23}" cy="178" r="9" fill="#233e32" stroke="{MINT}"/>'
+            b += text(x+14,213,name,11,LIME,mono=True)
+            b += text(x+14,236,sub,13,MUTED)
+    return b
 
 
 def projects():
@@ -97,16 +134,11 @@ def projects():
     for filename,n,title,tag,details,stack,mission,icon in entries:
         b = text(32,36,f"MISSION {n} / FIELD WORK",12,MINT,mono=True,spacing=2)+text(884,36,"EXPLORE REPOSITORY ↗",12,LIME,mono=True)
         b += line(32,54,1168,54)
-        b += text(32,105,title,34,WHITE,700,spacing=-.5)+text(34,143,tag,21,LIME)
-        b += text(34,181,details,16,MUTED)+text(34,226,stack,13,WHITE,mono=True)
-        b += '<circle cx="1068" cy="149" r="65" fill="url(#halo)" stroke="#29443f"/>'
-        if icon == "churn":
-            b += '<g fill="none" stroke="#6ce5c0" stroke-width="3"><path d="M1028 180V115M1028 180H1107"/><path d="M1038 164L1055 146L1075 155L1098 124" stroke="#d6f77b"/><circle cx="1098" cy="124" r="5" fill="#d6f77b"/></g>'
-        elif icon == "vault":
-            b += '<g fill="none" stroke="#6ce5c0" stroke-width="2"><path d="M1029 124Q1052 117 1068 132Q1084 117 1107 124V174Q1084 167 1068 181Q1052 167 1029 174Z"/><path d="M1068 132V181M1038 138L1056 141M1080 141L1097 138M1038 150L1056 153M1080 153L1097 150"/></g>'
-        else:
-            b += '<g fill="none" stroke="#6ce5c0" stroke-width="2"><path d="M1026 151H1110Q1104 183 1068 183Q1032 183 1026 151ZM1044 190H1092"/><path d="M1068 147Q1064 112 1095 107Q1098 132 1068 147ZM1068 147L1084 121" stroke="#d6f77b"/></g>'
-        save(filename,256,title,f"{tag} {details}. {stack}. Open the linked project repository for source and documentation.",b)
+        b += text(32,105,title,32,WHITE,700,spacing=-.5)+text(34,143,tag,21,LIME)
+        b += text(34,181,details,16,MUTED)+text(34,218,stack,13,WHITE,mono=True)
+        b += rect(34,242,340,32,"#152b26",6,"#335147")+text(48,263,mission,12,MINT,mono=True,spacing=1)
+        b += project_preview(icon)
+        save(filename,300,title,f"{tag} {details}. {stack}. Includes a conceptual interface illustration. Open the linked project repository for source and documentation.",b)
     b=label("02","MISSION ARCHIVE","SELECTED PROJECTS")+text(32,100,"Three problems. One instinct: make information useful.",24,WHITE,700)
     save("02-missions",130,"Mission archive — Featured projects","Customer churn prediction, shared student resources, and surplus food redistribution.",b)
 
@@ -141,12 +173,13 @@ def trajectory():
 def footer():
     b=label("06","OPEN A CHANNEL","COLLABORATION WELCOME")
     b += text(32,112,"Have a curious problem?",39,WHITE,700)+text(32,155,"Let's build something useful.",30,LIME)
-    b += text(34,201,"AI/ML ideas · Interesting datasets · Thoughtful software",17,MUTED)
+    b += text(34,201,"AI/ML collaborations · Data questions · Web & mobile ideas",17,MUTED)
     b += line(32,234,1168,234)+text(32,271,"THISUL HERATH / SRI LANKA",12,MINT,mono=True,spacing=2)+text(885,271,"END OF TRANSMISSION _",12,MUTED,mono=True)
     b += '<g fill="none" stroke="#395a67"><circle cx="1040" cy="144" r="52"/><ellipse cx="1040" cy="144" rx="89" ry="25" transform="rotate(-25 1040 144)"/></g><circle class="pulse" cx="1104" cy="115" r="6" fill="#d6f77b"/>'
     save("06-contact",299,"Open a channel — Let's connect","Have an AI/ML idea, an interesting dataset or a software project? Reach out to Thisul Herath.",b)
     for name,title,sub in [("portfolio","PORTFOLIO","VIEW WORK ↗"),("linkedin","LINKEDIN","CONNECT ↗"),("kaggle","KAGGLE","EXPLORE ↗"),("email","EMAIL","SAY HELLO ↗"),("instagram","INSTAGRAM","FOLLOW ↗")]:
         b=text(16,28,title,14,WHITE,700,mono=True,spacing=1)+text(16,51,sub,10,MINT,mono=True,spacing=1)
+        b += rect(174,18,26,28,"#152b26",6,"#335147")+text(180,38,"↗",18,LIME)
         save(f"link-{name}",68,title,sub,b,width=216)
 
 
