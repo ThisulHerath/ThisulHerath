@@ -5,6 +5,7 @@ Only standard-library modules are required. No external fonts or SVG scripts.
 """
 from pathlib import Path
 from html import escape
+from random import Random
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "orbital"
@@ -26,6 +27,25 @@ def rect(x, y, w, h, fill=PANEL, rx=12, stroke=LINE):
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}"/>'
 
 
+def snowfall(width, height, hero=False):
+    """Seeded decorative snowfall; no scripts, external assets, or text overlays."""
+    rng = Random(f"orbital-winter-{width}-{height}")
+    flakes = []
+    # Keep the denser field in the hero illustration; other cards get edge snow.
+    count = 32 if hero else 14
+    for i in range(count):
+        x = rng.uniform(710, width-18) if hero else rng.choice([rng.uniform(9,25), rng.uniform(width-25,width-9)])
+        y = rng.uniform(0, height)
+        radius = rng.uniform(1, 2.5)
+        duration = rng.uniform(12, 24)
+        delay = -rng.uniform(0, duration)
+        color = MINT if i % 6 == 0 else WHITE
+        # Two copies make a seamless fall over exactly one card height.
+        circles = ''.join(f'<circle cx="{x:.1f}" cy="{cy:.1f}" r="{radius:.1f}" fill="{color}" opacity=".5"/>' for cy in (y, y-height))
+        flakes.append(f'<g class="snow" style="animation-duration:{duration:.1f}s;animation-delay:{delay:.1f}s">{circles}</g>')
+    return f'<g aria-hidden="true" pointer-events="none" clip-path="url(#snow-clip)" style="--snow-distance:{height}px">'+''.join(flakes)+'</g>'
+
+
 def save(name, height, title, description, body, width=1200):
     defs = '''<defs>
       <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#203347" stroke-opacity=".32"/></pattern>
@@ -36,12 +56,18 @@ def save(name, height, title, description, body, width=1200):
       .orbit{transform-origin:940px 242px;animation:orbit 48s linear infinite}
       .pulse{animation:pulse 4s ease-in-out infinite}
       .drift{animation:drift 6s ease-in-out infinite}
+      .snow{animation:snowfall linear infinite}
+      @keyframes snowfall{from{transform:translate(0,0)}to{transform:translate(0,var(--snow-distance))}}
       @keyframes orbit{to{transform:rotate(360deg)}}
       @keyframes pulse{50%{opacity:.4}}
       @keyframes drift{50%{transform:translateY(-7px)}}
-      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift{animation:none}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift{animation:none}.snow{display:none}}
     </style>'''
-    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>{defs}{rect(1,1,width-2,height-2,BG,18)}{body}</svg>\n'
+    snow = ''
+    if width == 1200:
+        defs += f'<defs><clipPath id="snow-clip"><rect x="2" y="2" width="{width-4}" height="{height-4}" rx="17"/></clipPath></defs>'
+        snow = snowfall(width,height,hero=name == "00-arrival")
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>{defs}{rect(1,1,width-2,height-2,BG,18)}{body}{snow}</svg>\n'
     (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
 
 
