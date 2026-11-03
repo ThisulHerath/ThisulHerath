@@ -1,6 +1,8 @@
 ﻿<p align="center">
-  <img src="./assets/orbital/00-arrival.svg" width="100%" alt="Thisul Herath — Orbital Research Station. Curiosity is the launch sequence. AI/ML, full-stack and mobile development. Sri Lanka, UTC+05:30." />
+  <img src="./assets/orbital/00-arrival.svg" width="100%" alt="Thisul Herath — Christmas in Orbit. Animated snowfall and a Santa hat on my orbital emblem. AI/ML, full-stack and mobile development. Sri Lanka, UTC+05:30." />
 </p>
+
+<img src="./assets/orbital/00-winter-transmission.svg" width="100%" alt="Christmas in Orbit: Let it snow. Let ideas glow. A snowy Christmas tree, twinkling fairy lights and warm wishes for bright builds." />
 
 <p align="center">
   <a href="https://portfolio-lemon-two-47.vercel.app/"><img src="./assets/orbital/link-portfolio.svg" width="180" alt="Visit my portfolio" /></a>
@@ -57,4 +59,4 @@ I started with **Java** and found my curiosity in **Python**. Now I connect the 
   <a href="https://www.instagram.com/_thisul_herath"><img src="./assets/orbital/link-instagram.svg" width="180" alt="Find me on Instagram" /></a>
 </p>
 
-<p align="center"><sub>Designed for curiosity. Built for the next orbit.</sub></p>
+<p align="center"><sub>❄️ A little snow. A little Christmas magic. Still building for the next orbit. 🎄</sub></p>

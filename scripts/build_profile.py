@@ -32,7 +32,7 @@ def snowfall(width, height, hero=False):
     rng = Random(f"orbital-winter-{width}-{height}")
     flakes = []
     # Keep the denser field in the hero illustration; other cards get edge snow.
-    count = 32 if hero else 14
+    count = 64 if hero else 24
     for i in range(count):
         x = rng.uniform(710, width-18) if hero else rng.choice([rng.uniform(9,25), rng.uniform(width-25,width-9)])
         y = rng.uniform(0, height)
@@ -46,6 +46,28 @@ def snowfall(width, height, hero=False):
     return f'<g aria-hidden="true" pointer-events="none" clip-path="url(#snow-clip)" style="--snow-distance:{height}px">'+''.join(flakes)+'</g>'
 
 
+def christmas_lights(width):
+    """A fine evergreen cable and alternating warm, ruby and icy bulbs."""
+    b = '<g aria-hidden="true"><path d="M24 10Q108 36 192 10T360 10T528 10T696 10T864 10T1032 10T1176 10" fill="none" stroke="#315c50" stroke-width="2"/>'
+    for i, x in enumerate(range(48, width-30, 56)):
+        y = 14 if i % 3 == 0 else 21
+        color = ["#ffd98a", "#ef7581", "#91e8e3"][i % 3]
+        b += f'<g class="fairy-light" style="animation-delay:-{i*.37:.2f}s"><path d="M{x} {y-5}v7" stroke="#487d65" stroke-width="2"/><circle cx="{x}" cy="{y+8}" r="10" fill="{color}" opacity=".08"/><ellipse cx="{x}" cy="{y+8}" rx="3" ry="5" fill="{color}"/></g>'
+    return b + '</g>'
+
+
+def christmas_tree(x, y, scale=1):
+    return f'''<g transform="translate({x} {y}) scale({scale})" aria-hidden="true">
+      <ellipse cx="0" cy="110" rx="65" ry="9" fill="#e1f5f4" opacity=".12"/>
+      <path d="M-7 78H7V110H-7Z" fill="#8b654c"/>
+      <path d="M0-63L-35-6H-22L-49 37H-32L-64 87H64L32 37H49L22-6H35Z" fill="#163f35" stroke="#4b9d7b" stroke-width="2"/>
+      <path d="M-23-23L0-63L23-23L0-32ZM-42 25L-28 3L0 13L28 3L42 25L0 32ZM-56 75L-43 55L0 68L43 55L56 75L0 84Z" fill="#dcefeb" opacity=".85"/>
+      <path d="M-28 9Q0 31 29 11M-44 49Q0 72 45 49" fill="none" stroke="#e5bd6e" stroke-width="2"/>
+      <g class="fairy-light"><circle cx="-18" cy="3" r="4" fill="#ef7581"/><circle cx="28" cy="43" r="4" fill="#ffd98a"/><circle cx="-33" cy="64" r="4" fill="#91e8e3"/></g>
+      <path class="star-glow" d="M0-87L5-75L18-74L8-65L11-52L0-59L-11-52L-8-65L-18-74L-5-75Z" fill="#ffe6a4"/>
+    </g>'''
+
+
 def save(name, height, title, description, body, width=1200):
     defs = '''<defs>
       <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#203347" stroke-opacity=".32"/></pattern>
@@ -57,11 +79,14 @@ def save(name, height, title, description, body, width=1200):
       .pulse{animation:pulse 4s ease-in-out infinite}
       .drift{animation:drift 6s ease-in-out infinite}
       .snow{animation:snowfall linear infinite}
+      .fairy-light{animation:twinkle 3.6s ease-in-out infinite}
+      .star-glow{animation:twinkle 4.8s ease-in-out infinite}
+      @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.45}}
       @keyframes snowfall{from{transform:translate(0,0)}to{transform:translate(0,var(--snow-distance))}}
       @keyframes orbit{to{transform:rotate(360deg)}}
       @keyframes pulse{50%{opacity:.4}}
       @keyframes drift{50%{transform:translateY(-7px)}}
-      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift{animation:none}.snow{display:none}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow{animation:none}.snow{display:none}}
     </style>'''
     snow = ''
     if width == 1200:
@@ -92,10 +117,22 @@ def hero():
     b += text(54,454,"SRI LANKA  /  UTC+05:30  /  ALWAYS EXPLORING",11,MUTED,mono=True,spacing=1)
     b += '<g fill="none" stroke="#395a67"><circle cx="940" cy="242" r="177" stroke-dasharray="3 9"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(-35 940 242)"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(35 940 242)"/><circle cx="940" cy="242" r="110"/></g>'
     b += '<g class="orbit"><circle cx="940" cy="65" r="7" fill="#d6f77b"/><circle cx="940" cy="419" r="4" fill="#6ce5c0"/><path d="M940 51V38M926 65H913M954 65H967" stroke="#d6f77b"/></g>'
-    b += '<g class="drift">'+rect(876,178,128,128,PANEL,26,MINT)+text(940,252,"{ th }",28,LIME,700,mono=True).replace('<text ', '<text text-anchor="middle" ')+'</g>'
+    b += '<g class="drift">'+rect(876,178,128,128,PANEL,26,MINT)+text(940,252,"{ th }",28,LIME,700,mono=True).replace('<text ', '<text text-anchor="middle" ')
+    b += '<path d="M890 180Q918 109 964 143L988 173L951 166Q919 152 907 187Z" fill="#c84c61" stroke="#ee8290" stroke-width="2"/><path d="M887 179Q938 161 990 178L987 193Q939 177 891 194Z" fill="#edf5f2"/><circle cx="989" cy="171" r="11" fill="#edf5f2"/></g>'
     b += text(777,43,"DEEP SPACE / OPEN SOURCE",10,MUTED,mono=True,spacing=2)
     b += text(827,454,"IDEA → EXPERIMENT → BUILD",11,MINT,mono=True)
-    save("00-arrival",480,"Thisul Herath — Orbital Research Station","An animated orbital emblem in mint and chartreuse. AI/ML, full-stack and mobile development. Based in Sri Lanka, UTC+05:30.",b)
+    save("00-arrival",480,"Thisul Herath — Christmas in Orbit","An animated snowy orbital emblem with a Santa hat. AI/ML, full-stack and mobile development. Based in Sri Lanka, UTC+05:30.",b)
+
+
+def winter_transmission():
+    b = christmas_lights(1200)
+    b += text(36,76,"SEASONAL TRANSMISSION / CHRISTMAS IN ORBIT",13,"#91e8e3",mono=True,spacing=2)
+    b += text(34,129,"Let it snow. Let ideas glow.",37,WHITE,700)
+    b += text(36,167,"Warm wishes, bright builds & a little Christmas magic.",19,"#ffd98a")
+    b += text(36,207,"FRESH SNOW / WARM LIGHTS / NEW POSSIBILITIES",11,MUTED,mono=True,spacing=2)
+    b += christmas_tree(1055,122,.78)
+    b += '<path d="M800 229Q865 213 934 229T1198 228V246H800Z" fill="#cde7eb" opacity=".12"/>'
+    save("00-winter-transmission",248,"Christmas in Orbit — Let it snow. Let ideas glow.","A snow-covered Christmas tree, twinkling fairy lights and gently falling snow. Warm wishes, bright builds and a little Christmas magic.",b)
 
 
 def console():
@@ -201,7 +238,7 @@ def footer():
     b += text(32,112,"Have a curious problem?",39,WHITE,700)+text(32,155,"Let's build something useful.",30,LIME)
     b += text(34,201,"AI/ML collaborations · Data questions · Web & mobile ideas",17,MUTED)
     b += line(32,234,1168,234)+text(32,271,"THISUL HERATH / SRI LANKA",12,MINT,mono=True,spacing=2)+text(885,271,"END OF TRANSMISSION _",12,MUTED,mono=True)
-    b += '<g fill="none" stroke="#395a67"><circle cx="1040" cy="144" r="52"/><ellipse cx="1040" cy="144" rx="89" ry="25" transform="rotate(-25 1040 144)"/></g><circle class="pulse" cx="1104" cy="115" r="6" fill="#d6f77b"/>'
+    b += christmas_tree(1040,134,.7)
     save("06-contact",299,"Open a channel — Let's connect","Have an AI/ML idea, an interesting dataset or a software project? Reach out to Thisul Herath.",b)
     for name,title,sub in [("portfolio","PORTFOLIO","VIEW WORK ↗"),("linkedin","LINKEDIN","CONNECT ↗"),("kaggle","KAGGLE","EXPLORE ↗"),("email","EMAIL","SAY HELLO ↗"),("instagram","INSTAGRAM","FOLLOW ↗")]:
         b=text(16,28,title,14,WHITE,700,mono=True,spacing=1)+text(16,51,sub,10,MINT,mono=True,spacing=1)
@@ -210,5 +247,5 @@ def footer():
 
 
 if __name__ == "__main__":
-    hero(); console(); projects(); toolkit(); trajectory(); footer()
+    hero(); winter_transmission(); console(); projects(); toolkit(); trajectory(); footer()
     print(f"Built profile SVGs in {OUT}")
