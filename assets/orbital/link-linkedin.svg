@@ -10,10 +10,18 @@
       .snow{animation:snowfall linear infinite}
       .fairy-light{animation:twinkle 3.6s ease-in-out infinite}
       .star-glow{animation:twinkle 4.8s ease-in-out infinite}
+      .sun-rays{animation:orbit 32s linear infinite;transform-origin:0px 0px}
+      .cloud-drift{animation:clouds 12s ease-in-out infinite alternate}
+      .aurora{animation:aurora 9s ease-in-out infinite alternate}
+      .aurora-second{animation-delay:-4s}
+      .shooting-star{animation:meteor 9s ease-in-out infinite}
+      @keyframes clouds{to{transform:translateX(22px)}}
+      @keyframes aurora{to{transform:translateY(17px);opacity:.18}}
+      @keyframes meteor{0%,65%,100%{opacity:0;transform:translate(0,0)}70%{opacity:1}84%{opacity:0;transform:translate(200px,82px)}}
       @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.45}}
       @keyframes snowfall{from{transform:translate(0,0)}to{transform:translate(0,var(--snow-distance))}}
       @keyframes orbit{to{transform:rotate(360deg)}}
       @keyframes pulse{50%{opacity:.4}}
       @keyframes drift{50%{transform:translateY(-7px)}}
-      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow{animation:none}.snow{display:none}}
-    </style><rect x="1" y="1" width="214" height="66" rx="18" fill="#080f19" stroke="#26394a"/><text x="16" y="28" fill="#edf5f2" font-family="Consolas,'Liberation Mono',monospace" font-size="14" font-weight="700" letter-spacing="1">LINKEDIN</text><text x="16" y="51" fill="#6ce5c0" font-family="Consolas,'Liberation Mono',monospace" font-size="10" font-weight="400" letter-spacing="1">CONNECT ↗</text><rect x="174" y="18" width="26" height="28" rx="6" fill="#152b26" stroke="#335147"/><text x="180" y="38" fill="#d6f77b" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" letter-spacing="0">↗</text></svg>
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow,.sun-rays,.cloud-drift,.aurora,.shooting-star{animation:none}.snow,.shooting-star{display:none}}
+    </style><rect x="1" y="1" width="214" height="66" rx="18" fill="#080f19" stroke="#26394a"/><text x="16" y="28" fill="#edf5f2" font-family="Consolas,'Liberation Mono',monospace" font-size="14" font-weight="700" letter-spacing="1">LINKEDIN</text><text x="16" y="51" fill="#6ce5c0" font-family="Consolas,'Liberation Mono',monospace" font-size="10" font-weight="400" letter-spacing="1">CONNECT ↗</text><rect x="174" y="18" width="26" height="28" rx="6" fill="#152b26" stroke="#335147"/><text x="180" y="38" fill="#d6f77b" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" letter-spacing="0">↗</text><g class="snow-cap" aria-hidden="true" pointer-events="none"><path d="M2 19Q3 2 20 2 H196 Q213 2 214 19 Q182.7 13.2 151.4 8.2 Q119.3 12.6 87.3 7.6 Q69.2 13.7 51.0 8.7 Q36.4 11.7 21.8 6.7 Q11.9 14.0 2.0 9.0 Z" fill="#edf8fa" stroke="#b9dce5" stroke-width=".6"/><ellipse cx="30" cy="5" rx="18.5" ry="3" fill="#fff" opacity=".7"/><ellipse cx="127" cy="5" rx="20.5" ry="3" fill="#fff" opacity=".7"/></g></svg>

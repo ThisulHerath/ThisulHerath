@@ -6,6 +6,7 @@ Only standard-library modules are required. No external fonts or SVG scripts.
 from pathlib import Path
 from html import escape
 from random import Random
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "orbital"
@@ -32,7 +33,7 @@ def snowfall(width, height, hero=False):
     rng = Random(f"orbital-winter-{width}-{height}")
     flakes = []
     # Keep the denser field in the hero illustration; other cards get edge snow.
-    count = 64 if hero else 24
+    count = 90 if hero else 40
     for i in range(count):
         x = rng.uniform(710, width-18) if hero else rng.choice([rng.uniform(9,25), rng.uniform(width-25,width-9)])
         y = rng.uniform(0, height)
@@ -41,9 +42,27 @@ def snowfall(width, height, hero=False):
         delay = -rng.uniform(0, duration)
         color = MINT if i % 6 == 0 else WHITE
         # Two copies make a seamless fall over exactly one card height.
-        circles = ''.join(f'<circle cx="{x:.1f}" cy="{cy:.1f}" r="{radius:.1f}" fill="{color}" opacity=".5"/>' for cy in (y, y-height))
+        circles = ''.join(f'<circle class="snowflake" cx="{x:.1f}" cy="{cy:.1f}" r="{radius:.1f}" fill="{color}" opacity=".5"/>' for cy in (y, y-height))
         flakes.append(f'<g class="snow" style="animation-duration:{duration:.1f}s;animation-delay:{delay:.1f}s">{circles}</g>')
     return f'<g aria-hidden="true" pointer-events="none" clip-path="url(#snow-clip)" style="--snow-distance:{height}px">'+''.join(flakes)+'</g>'
+
+
+def snow_cap(width):
+    """Soft accumulated snow across the top rim, clear of card headings."""
+    rng = Random(f"snow-cap-{width}")
+    edge = ['M2 19Q3 2 20 2', f'H{width-20}', f'Q{width-3} 2 {width-2} 19']
+    x = width-2
+    while x > 20:
+        end = max(2, x-rng.uniform(28, 66))
+        depth = rng.uniform(8, 16) if width >= 1200 else rng.uniform(6, 10)
+        edge.append(f'Q{(x+end)/2:.1f} {depth+5:.1f} {end:.1f} {depth:.1f}')
+        x = end
+    edge.append('Z')
+    b = '<g class="snow-cap" aria-hidden="true" pointer-events="none">'
+    b += f'<path d="{" ".join(edge)}" fill="#edf8fa" stroke="#b9dce5" stroke-width=".6"/>'
+    for x in range(30, width-24, 97):
+        b += f'<ellipse cx="{x}" cy="5" rx="{rng.uniform(14,28):.1f}" ry="3" fill="#fff" opacity=".7"/>'
+    return b + '</g>'
 
 
 def christmas_lights(width):
@@ -68,6 +87,39 @@ def christmas_tree(x, y, scale=1):
     </g>'''
 
 
+def atmosphere(day=False):
+    if day:
+        return '''<g aria-hidden="true"><g transform="translate(1085 108)"><g class="sun-rays" fill="none" stroke="#d59a24" stroke-width="2"><circle r="33" stroke-dasharray="3 10"/></g><circle r="21" fill="#ffcf69"/></g>
+        <g class="cloud-drift" fill="#fff" opacity=".8"><path d="M755 113Q747 94 767 90Q773 65 797 77Q819 69 825 91Q850 94 842 113Z"/><path d="M1020 357Q1014 340 1034 337Q1045 310 1067 330Q1088 321 1099 340Q1122 342 1114 357Z"/></g></g>'''
+    return '''<g aria-hidden="true"><path class="aurora" d="M727 97Q850 140 940 80T1170 116" fill="none" stroke="#6ce5c0" stroke-width="28" opacity=".08"/>
+      <path class="aurora aurora-second" d="M720 125Q850 65 960 122T1170 83" fill="none" stroke="#a6a1ff" stroke-width="19" opacity=".1"/>
+      <path d="M1100 72A25 25 0 1 0 1122 109A22 22 0 0 1 1100 72Z" fill="#e1eeff"/>
+      <g class="shooting-star"><path d="M802 81L866 107" stroke="#d6ecff" stroke-width="2"/><circle cx="866" cy="107" r="3" fill="#fff"/></g></g>'''
+
+
+def write_variants(name, svg):
+    """Write both appearances from one layout, also used by daily telemetry."""
+    night = svg
+    if name == "00-arrival":
+        night = night.replace('<g fill="none" stroke="#395a67">', atmosphere()+'<g fill="none" stroke="#395a67">', 1)
+    (OUT / f"{name}.svg").write_text(night, encoding="utf-8")
+    palette = {
+        '#080f19':'#e8f4fb', '#0e1a27':'#f8fcff', '#26394a':'#adc8d9',
+        '#edf5f2':'#173649', '#9cb1bf':'#426477', '#6ce5c0':'#127765',
+        '#d6f77b':'#526d16', '#203347':'#a6c9dd', '#395a67':'#7199ae',
+        '#10231f':'#e0f0e8', '#335147':'#94b7aa', '#152f28':'#d4e9df',
+        '#426b5b':'#8ab49f', '#152b26':'#dcece3', '#0b1520':'#e5f1f7',
+        '#152b2a':'#d5e8e3', '#233e32':'#d7e7d5', '#1c2c3b':'#cadfe9',
+        '#91e8e3':'#156c7d', '#ffd98a':'#855413', '#e5bd6e':'#9a691c',
+    }
+    day = re.sub(r'#[0-9a-fA-F]{6}',lambda m:palette.get(m.group().lower(),m.group()),svg)
+    if name == "00-arrival":
+        day = day.replace('<g fill="none" stroke="#7199ae">',atmosphere(True)+'<g fill="none" stroke="#7199ae">',1)
+    # Snow stays white against both palettes; body text uses the theme palette.
+    day = re.sub(r'(<circle[^>]+class="snowflake"[^>]+fill=")[^"]+',r'\g<1>#ffffff',day)
+    (OUT / f"{name}-day.svg").write_text(day, encoding="utf-8")
+
+
 def save(name, height, title, description, body, width=1200):
     defs = '''<defs>
       <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#203347" stroke-opacity=".32"/></pattern>
@@ -81,19 +133,27 @@ def save(name, height, title, description, body, width=1200):
       .snow{animation:snowfall linear infinite}
       .fairy-light{animation:twinkle 3.6s ease-in-out infinite}
       .star-glow{animation:twinkle 4.8s ease-in-out infinite}
+      .sun-rays{animation:orbit 32s linear infinite;transform-origin:0px 0px}
+      .cloud-drift{animation:clouds 12s ease-in-out infinite alternate}
+      .aurora{animation:aurora 9s ease-in-out infinite alternate}
+      .aurora-second{animation-delay:-4s}
+      .shooting-star{animation:meteor 9s ease-in-out infinite}
+      @keyframes clouds{to{transform:translateX(22px)}}
+      @keyframes aurora{to{transform:translateY(17px);opacity:.18}}
+      @keyframes meteor{0%,65%,100%{opacity:0;transform:translate(0,0)}70%{opacity:1}84%{opacity:0;transform:translate(200px,82px)}}
       @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.45}}
       @keyframes snowfall{from{transform:translate(0,0)}to{transform:translate(0,var(--snow-distance))}}
       @keyframes orbit{to{transform:rotate(360deg)}}
       @keyframes pulse{50%{opacity:.4}}
       @keyframes drift{50%{transform:translateY(-7px)}}
-      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow{animation:none}.snow{display:none}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow,.sun-rays,.cloud-drift,.aurora,.shooting-star{animation:none}.snow,.shooting-star{display:none}}
     </style>'''
     snow = ''
     if width == 1200:
         defs += f'<defs><clipPath id="snow-clip"><rect x="2" y="2" width="{width-4}" height="{height-4}" rx="17"/></clipPath></defs>'
         snow = snowfall(width,height,hero=name == "00-arrival")
-    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>{defs}{rect(1,1,width-2,height-2,BG,18)}{body}{snow}</svg>\n'
-    (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>{defs}{rect(1,1,width-2,height-2,BG,18)}{body}{snow}{snow_cap(width)}</svg>\n'
+    write_variants(name, svg)
 
 
 def label(number, title, right, y=36):
@@ -118,7 +178,7 @@ def hero():
     b += '<g fill="none" stroke="#395a67"><circle cx="940" cy="242" r="177" stroke-dasharray="3 9"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(-35 940 242)"/><ellipse cx="940" cy="242" rx="204" ry="79" transform="rotate(35 940 242)"/><circle cx="940" cy="242" r="110"/></g>'
     b += '<g class="orbit"><circle cx="940" cy="65" r="7" fill="#d6f77b"/><circle cx="940" cy="419" r="4" fill="#6ce5c0"/><path d="M940 51V38M926 65H913M954 65H967" stroke="#d6f77b"/></g>'
     b += '<g class="drift">'+rect(876,178,128,128,PANEL,26,MINT)+text(940,252,"{ th }",28,LIME,700,mono=True).replace('<text ', '<text text-anchor="middle" ')
-    b += '<path d="M890 180Q918 109 964 143L988 173L951 166Q919 152 907 187Z" fill="#c84c61" stroke="#ee8290" stroke-width="2"/><path d="M887 179Q938 161 990 178L987 193Q939 177 891 194Z" fill="#edf5f2"/><circle cx="989" cy="171" r="11" fill="#edf5f2"/></g>'
+    b += '<path d="M890 180Q918 109 964 143L988 173L951 166Q919 152 907 187Z" fill="#c84c61" stroke="#ee8290" stroke-width="2"/><path d="M887 179Q938 161 990 178L987 193Q939 177 891 194Z" fill="#f4fafb"/><circle cx="989" cy="171" r="11" fill="#f4fafb"/></g>'
     b += text(777,43,"DEEP SPACE / OPEN SOURCE",10,MUTED,mono=True,spacing=2)
     b += text(827,454,"IDEA → EXPERIMENT → BUILD",11,MINT,mono=True)
     save("00-arrival",480,"Thisul Herath — Christmas in Orbit","An animated snowy orbital emblem with a Santa hat. AI/ML, full-stack and mobile development. Based in Sri Lanka, UTC+05:30.",b)
