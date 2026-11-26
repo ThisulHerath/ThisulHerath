@@ -28,6 +28,33 @@ def rect(x, y, w, h, fill=PANEL, rx=12, stroke=LINE):
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}"/>'
 
 
+def satellite(x, y, scale=1):
+    return f'''<g transform="translate({x} {y}) scale({scale})" aria-hidden="true"><g class="satellite-float">
+      <g transform="rotate(-22)"><path d="M-55 0H55" stroke="{MUTED}" stroke-width="3"/>
+      <g fill="{PANEL}" stroke="{MINT}" stroke-width="2"><rect x="-78" y="-23" width="48" height="46" rx="4"/><rect x="30" y="-23" width="48" height="46" rx="4"/><rect x="-19" y="-24" width="38" height="48" rx="7"/></g>
+      <path d="M-62-23V23M-46-23V23M46-23V23M62-23V23M-78 0H-30M30 0H78M0-24V-42L12-50" fill="none" stroke="{MINT}"/>
+      <circle class="pulse" cx="12" cy="-50" r="4" fill="{LIME}"/><path class="signal-ring" d="M20-57Q32-49 25-37M29-65Q47-50 36-31" fill="none" stroke="{MINT}" stroke-width="2"/></g></g></g>'''
+
+
+def signal_wave(x, y, width=260):
+    bars = ''.join(f'<rect class="equalizer" x="{i*10}" y="{-h/2}" width="3" height="{h}" rx="1.5" fill="{MINT}" style="animation-delay:-{i*.17:.2f}s"/>' for i in range(width//10) for h in [8+((i*13)%30)])
+    return f'<g transform="translate({x} {y})" aria-hidden="true">{bars}</g>'
+
+
+def equipment_icon(x, y, kind):
+    b = f'<g transform="translate({x} {y})" aria-hidden="true"><g class="satellite-float" fill="none" stroke="{MINT}" stroke-width="1.8">'
+    if kind == 'A':
+        nodes=[(-27,0),(0,-20),(0,20),(27,0)]
+        for a,c in [(0,1),(0,2),(1,3),(2,3),(1,2)]:
+            b+=f'<path class="signal-path" d="M{nodes[a][0]} {nodes[a][1]}L{nodes[c][0]} {nodes[c][1]}"/>'
+        for nx,ny in nodes: b+=f'<circle class="pulse" cx="{nx}" cy="{ny}" r="5" fill="{PANEL}"/>'
+    elif kind == 'B':
+        b+='<rect x="-32" y="-20" width="47" height="32" rx="4"/><path d="M-9 12V21M-24 21H6M-24-7L-19-2L-24 3M-12 3H-4"/><rect x="13" y="-8" width="20" height="37" rx="4"/><path class="pulse" d="M19 22H27"/>'
+    else:
+        b+='<ellipse cy="-16" rx="28" ry="9"/><path d="M-28-16V16C-28 29 28 29 28 16V-16M-28 0C-28 13 28 13 28 0"/><path class="signal-path" d="M-13-9V19M0-7V21M13-9V19" opacity=".4"/>'
+    return b+'</g></g>'
+
+
 def snowfall(width, height, hero=False):
     """Seeded decorative snowfall; no scripts, external assets, or text overlays."""
     rng = Random(f"orbital-winter-{width}-{height}")
@@ -138,6 +165,13 @@ def save(name, height, title, description, body, width=1200):
       .aurora{animation:aurora 9s ease-in-out infinite alternate}
       .aurora-second{animation-delay:-4s}
       .shooting-star{animation:meteor 9s ease-in-out infinite}
+      .satellite-float{animation:bob 7s ease-in-out infinite}
+      .signal-ring{animation:twinkle 3s ease-in-out infinite}
+      .equalizer{transform-box:fill-box;transform-origin:center;animation:equalize 2.4s ease-in-out infinite alternate;opacity:.7}
+      .signal-path{stroke-dasharray:5 6;animation:transmit 5s linear infinite}
+      @keyframes bob{50%{transform:translateY(-5px) rotate(3deg)}}
+      @keyframes equalize{to{transform:scaleY(.3);opacity:.3}}
+      @keyframes transmit{to{stroke-dashoffset:-44}}
       @keyframes clouds{to{transform:translateX(22px)}}
       @keyframes aurora{to{transform:translateY(17px);opacity:.18}}
       @keyframes meteor{0%,65%,100%{opacity:0;transform:translate(0,0)}70%{opacity:1}84%{opacity:0;transform:translate(200px,82px)}}
@@ -146,7 +180,7 @@ def save(name, height, title, description, body, width=1200):
       @keyframes orbit{to{transform:rotate(360deg)}}
       @keyframes pulse{50%{opacity:.4}}
       @keyframes drift{50%{transform:translateY(-7px)}}
-      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow,.sun-rays,.cloud-drift,.aurora,.shooting-star{animation:none}.snow,.shooting-star{display:none}}
+      @media(prefers-reduced-motion:reduce){.orbit,.pulse,.drift,.fairy-light,.star-glow,.sun-rays,.cloud-drift,.aurora,.shooting-star,.satellite-float,.signal-ring,.equalizer,.signal-path{animation:none}.snow,.shooting-star{display:none}}
     </style>'''
     snow = ''
     if width == 1200:
@@ -181,6 +215,7 @@ def hero():
     b += '<path d="M890 180Q918 109 964 143L988 173L951 166Q919 152 907 187Z" fill="#c84c61" stroke="#ee8290" stroke-width="2"/><path d="M887 179Q938 161 990 178L987 193Q939 177 891 194Z" fill="#f4fafb"/><circle cx="989" cy="171" r="11" fill="#f4fafb"/></g>'
     b += text(777,43,"DEEP SPACE / OPEN SOURCE",10,MUTED,mono=True,spacing=2)
     b += text(827,454,"IDEA → EXPERIMENT → BUILD",11,MINT,mono=True)
+    b += satellite(611,220,.62)
     save("00-arrival",480,"Thisul Herath — Christmas in Orbit","An animated snowy orbital emblem with a Santa hat. AI/ML, full-stack and mobile development. Based in Sri Lanka, UTC+05:30.",b)
 
 
@@ -191,6 +226,7 @@ def winter_transmission():
     b += text(36,167,"Warm wishes, bright builds & a little Christmas magic.",19,"#ffd98a")
     b += text(36,207,"FRESH SNOW / WARM LIGHTS / NEW POSSIBILITIES",11,MUTED,mono=True,spacing=2)
     b += christmas_tree(1055,122,.78)
+    b += '<g aria-hidden="true" transform="translate(841 171)"><g class="satellite-float">'+rect(-27,-28,54,45,"#c84c61",5,"#ee8290")+'<path d="M0-28V17M-27-10H27M0-28Q-32-57-25-28Q-13-18 0-28Q32-57 25-28Q13-18 0-28" fill="none" stroke="#ffd98a" stroke-width="4"/></g></g>'
     b += '<path d="M800 229Q865 213 934 229T1198 228V246H800Z" fill="#cde7eb" opacity=".12"/>'
     save("00-winter-transmission",248,"Christmas in Orbit — Let it snow. Let ideas glow.","A snow-covered Christmas tree, twinkling fairy lights and gently falling snow. Warm wishes, bright builds and a little Christmas magic.",b)
 
@@ -261,8 +297,9 @@ def projects():
         b += text(34,181,details,16,MUTED)+text(34,218,stack,13,WHITE,mono=True)
         b += rect(34,242,340,32,"#152b26",6,"#335147")+text(48,263,mission,12,MINT,mono=True,spacing=1)
         b += project_preview(icon)
+        b += signal_wave(453,259,300)
         save(filename,300,title,f"{tag} {details}. {stack}. Includes a conceptual interface illustration. Open the linked project repository for source and documentation.",b)
-    b=label("02","MISSION ARCHIVE","SELECTED PROJECTS")+text(32,100,"Three problems. One instinct: make information useful.",24,WHITE,700)
+    b=label("02","MISSION ARCHIVE","SELECTED PROJECTS")+text(32,100,"Three problems. One instinct: make information useful.",24,WHITE,700)+satellite(1035,98,.44)
     save("02-missions",130,"Mission archive — Featured projects","Customer churn prediction, shared student resources, and surplus food redistribution.",b)
 
 
@@ -275,6 +312,7 @@ def toolkit():
         x=32+i*386
         b += rect(x,80,364,244)
         b += rect(x+20,100,34,34,LIME,6,LIME)+text(x+30,123,letter,18,BG,700,mono=True)
+        b += equipment_icon(x+287,120,letter)
         b += text(x+20,174,title,15,MINT,700,mono=True)
         for j,t in enumerate([a,c,d]):b += text(x+20,215+j*31,t,15,WHITE if j==0 else MUTED)
     b += text(32,364,"ALSO IN THE KIT / C++ · HTML · CSS · Keras · OpenCV · Matplotlib",13,MUTED,mono=True)
@@ -283,7 +321,7 @@ def toolkit():
 
 def trajectory():
     b=label("04","FLIGHT PATH","KEEP FOLLOWING CURIOSITY")
-    b += '<path d="M100 128H1100" stroke="#395a67" stroke-width="2" stroke-dasharray="5 8"/>'
+    b += '<path class="signal-path" d="M100 128H1100" stroke="#395a67" stroke-width="2" stroke-dasharray="5 8"/>'
     items=[(70,"01","THE SPARK","Java foundations.","A first line of code."),(360,"02","THE EXPERIMENT","Python, data & ML.","Questions become models."),(650,"03","THE BUILD","Web & mobile apps.","Ideas become interfaces."),(940,"04","THE NEXT ORBIT","NLP & intelligent apps.","Still exploring.")]
     for x,n,title,a,c in items:
         b += f'<circle cx="{x+30}" cy="128" r="23" fill="{BG}" stroke="{LIME if n=="04" else MINT}" stroke-width="2"/>'
@@ -299,6 +337,7 @@ def footer():
     b += text(34,201,"AI/ML collaborations · Data questions · Web & mobile ideas",17,MUTED)
     b += line(32,234,1168,234)+text(32,271,"THISUL HERATH / SRI LANKA",12,MINT,mono=True,spacing=2)+text(885,271,"END OF TRANSMISSION _",12,MUTED,mono=True)
     b += christmas_tree(1040,134,.7)
+    b += satellite(819,137,.65)
     save("06-contact",299,"Open a channel — Let's connect","Have an AI/ML idea, an interesting dataset or a software project? Reach out to Thisul Herath.",b)
     for name,title,sub in [("portfolio","PORTFOLIO","VIEW WORK ↗"),("linkedin","LINKEDIN","CONNECT ↗"),("kaggle","KAGGLE","EXPLORE ↗"),("email","EMAIL","SAY HELLO ↗"),("instagram","INSTAGRAM","FOLLOW ↗")]:
         b=text(16,28,title,14,WHITE,700,mono=True,spacing=1)+text(16,51,sub,10,MINT,mono=True,spacing=1)
